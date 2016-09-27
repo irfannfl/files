@@ -1,0 +1,43 @@
+<HEAD>
+ <TITLE>
+  Fast Copy with CMD
+ </TITLE>
+ <style>
+input {width:240px}
+</style>
+ <hta:application applicationname="Fast Copy with CMD" scroll="no" showInTaskbar="no" maximizeButton="no" BORDER="dialog" MINIMIZEBUTTON="no">
+</HEAD>
+<SCRIPT language="vbscript">
+ window.resizeto 360,310
+function copy(mode)
+	Set objShell = CreateObject( "Shell.Application" )
+    Set objFolder = objShell.BrowseForFolder( 0, "Pilih folder SUMBER:", &H10& , "" )
+	if (not objFolder is nothing) then
+        sumber = objFolder.Self.Path
+		tanda = 1
+    end if
+	mber.innerHTML = sumber
+    Set objFolder = objShell.BrowseForFolder( 0, "Pilih folder TUJUAN:", &H10& , "" )
+	if (not objFolder is nothing) then
+        tujuan = objFolder.Self.Path
+		uan.innerHTML = tujuan
+		if tanda = 1 then
+			dialog = MsgBox("Sumber: "+sumber+vbCrLf+"Tujuan : "+tujuan+vbCrLf+"Lanjut?", vbYesNo, "File akan dicopy menurut keterangan berikut")
+			if dialog = vbYes then
+			q = """"
+			perintah = "robocopy "+q+sumber+q+" "+q+tujuan+q+mode
+			objShell.ShellExecute "cmd.exe", "/k "+perintah, "", "runas", 1
+			end if
+		end if
+    end if
+End Function
+</SCRIPT>
+<BODY STYLE="font:14 pt verdana; background:#575757">
+ <center style='color:white'>Silahkan pilih mode copy :<br><br>
+ <input value="Tanpa merubah date created" type="button" onClick="copy(' /E /DCOPY:DAT')"> 
+ <input value="Dengan merubah date created" type="button" onClick="copy(' /E /DCOPY:DA')">
+ <input value="Moving (folder lama dihapus)" type="button" onClick="copy(' /E /MOVE')">
+ <div style="font-size:11px"><br>Sumber :<div id="mber"><br></div><br>Tujuan :<div id="uan"><br></div></div>
+ </center>
+ <div style="color:white; font-size:11px;float:bottom"><br>by : Naufal Irfan</div>
+</BODY> 
