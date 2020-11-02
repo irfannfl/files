@@ -1,0 +1,72 @@
+html {
+  font-family: arial;
+}
+body {
+  margin: 0;
+  tex-align:center;
+  background:url('../image/background.jpg');
+}
+
+#box{
+	width:380px;
+	height:427px;
+	border:2px solid rgba(0,0,0,0.7);
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.7);
+	margin-top:10vh;
+	background:rgba(255,255,255,0.3);
+	border-radius:10px;
+}
+
+#logo1 img{
+	float:left;
+	width:45%;
+	height:170px;
+	margin:3%;
+	margin-right:0px;
+}
+
+input{
+	font-size:18px;
+	width:360px;
+	height:38px;
+	margin-top:10px;
+	background:rgba(255,255,255,0.5);
+	border:1px solid rgba(0,0,0,0.5);
+	text-align: center;
+}
+
+input:hover{
+	box-shadow: 0px 0px 4px rgba(0,0,0,0.5);
+}
+
+button{
+	font-size:27px;
+	width:360px;
+	height:38px;
+	margin-top:10px;
+	background:rgba(9,177,232,0.9);
+	border:1px solid rgba(0,17,32,0.5);
+	text-align: center;
+	border-radius:7px;
+	cursor: pointer;
+}
+
+button:hover{
+	background:rgba(9,177,232,0.5);
+}
+
+#logo2 img{
+	float:right;
+	width:45%;
+	height:170px;
+	margin:3%;
+	margin-left:0px;
+}
+
+#judul1{
+	font-size:40px;
+}
+
+#judul2{
+	font-size:25px;
+}
